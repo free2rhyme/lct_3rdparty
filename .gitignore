@@ -18,6 +18,8 @@
 *.pb.cc
 *.pb.h
 build/bin
+!grpc/**/*.pb.cc
+!grpc/**/*.pb.h
 
 # Fortran module files
 *.mod
