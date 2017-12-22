@@ -2,6 +2,7 @@
 SERVICES_LIST := grpc
 SERVICES_LIST += mongocxx
 SERVICES_LIST += cassandra
+SERVICES_LIST += openssl
 
 all debug release build rebuild:
 	$(MAKE) -f alias.mk $@
