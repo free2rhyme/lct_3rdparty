@@ -13,6 +13,9 @@ MONOGOCXX       := mongocxx
 UV_BASE         := uv_1.11.0
 UV              := uv
 
+GRPC_BASE       := grpc_3.0.0
+GRPC            := grpc
+
 all debug release build:
 	@echo "Start building $@"
 
@@ -32,6 +35,10 @@ ifneq ($(UV), $(wildcard $(UV)))
 	ln $(SYMBOLIC_FLAGS) $(UV_BASE) $(UV)
 endif
 
+ifneq ($(GRPC), $(wildcard $(GRPC)))
+	ln $(SYMBOLIC_FLAGS) $(GRPC_BASE) $(GRPC)
+endif
+
 	@echo "Finished building $@"
 
 clean:
@@ -39,6 +46,7 @@ clean:
 	rm -f $(EIGEN)
 	rm -f $(MONOGOCXX)
 	rm -f $(UV)
+	rm -f $(GRPC)
 	@echo " "
 
 rebuild: build
